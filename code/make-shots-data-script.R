@@ -35,44 +35,44 @@ thompson$shot_made_flag[thompson$shot_made_flag == "y"] <- c("shot_yes")
 curry$shot_made_flag[curry$shot_made_flag == "n"] <- c("shot_no")
 curry$shot_made_flag[curry$shot_made_flag == "y"] <- c("shot_yes")
 
-iguodala <- mutate(iguodala, minute = period*12-minutes_remaining)
-green <- mutate(green, minute = period*12-minutes_remaining)
-durant <- mutate(durant, minute = period*12-minutes_remaining)
-thompson <- mutate(thompson, minute = period*12-minutes_remaining)
-curry <- mutate(curry, minute = period*12-minutes_remaining)
+iguodala1 <- mutate(iguodala, minute = period*12-minutes_remaining)
+green1 <- mutate(green, minute = period*12-minutes_remaining)
+durant1 <- mutate(durant, minute = period*12-minutes_remaining)
+thompson1 <- mutate(thompson, minute = period*12-minutes_remaining)
+curry1 <- mutate(curry, minute = period*12-minutes_remaining)
 
 sink(file="../Desktop/workout01/output/andre-iguodala-summary.txt")
-summary(iguodala)
+summary(iguodala1)
 sink(file="../Desktop/workout01/output/draymond-green-summary.txt")
-summary(green)
+summary(green1)
 sink(file="../Desktop/workout01/output/kevin-durant-summary.txt")
-summary(durant)
+summary(durant1)
 sink(file="../Desktop/workout01/output/klay-thompson-summary.txt")
-summary(thompson)
+summary(thompson1)
 sink(file="../Desktop/workout01/output/stephen-curry-summary.txt")
-summary(curry)
+summary(curry1)
 
 write.csv(
-  x=iguodala,
+  x=iguodala1,
   file="../Desktop/workout01/data/andre-iguodala.csv"
 )
 write.csv(
-  x=green,
+  x=green1,
   file="../Desktop/workout01/data/draymond-green.csv"
 )
 write.csv(
-  x=durant,
+  x=durant1,
   file="../Desktop/workout01/data/kevin-durant.csv"
 )
 write.csv(
-  x=thompson,
+  x=thompson1,
   file="../Desktop/workout01/data/klay-thompson.csv"
 )
 write.csv(
-  x=curry,
+  x=curry1,
   file="../Desktop/workout01/data/stephen-curry.csv"
 )
-df <- rbind(iguodala,green,durant,thompson,curry)
+df <- rbind(iguodala1,green1,durant1,thompson1,curry1)
 write.csv(
   x=df,
   file="../Desktop/workout01/data/shots-data.csv")
