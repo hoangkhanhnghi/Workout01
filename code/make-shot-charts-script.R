@@ -71,6 +71,15 @@ ggplot(data=curry) +
 dev.off()
 
 pdf(file="../Desktop/workout01/images/gsw-shot-chart.pdf",width=8,height=7)
+ggplot(data=shots_data) +
+  annotation_custom(court_image,-250,250,-50,420) +
+  geom_point(aes(x=x,y=y,color=shot_made_flag)) +
+  ylim(-50,420) +
+  ggtitle('Shot Chart: GSW (2016 season)') +
+  theme_minimal() +
+  facet_wrap(~name)
+dev.off()
+
 png(filename="../Desktop/workout01/images/gsw-shot-chart.png",width=8*96,height=7*96)
 ggplot(data=shots_data) +
   annotation_custom(court_image,-250,250,-50,420) +
@@ -80,3 +89,4 @@ ggplot(data=shots_data) +
   theme_minimal() +
   facet_wrap(~name)
 dev.off()
+```
